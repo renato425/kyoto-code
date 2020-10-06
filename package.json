@@ -1,0 +1,35 @@
+{
+  "name": "kyoto-code",
+  "version": "0.0.1",
+  "description": "Faça conexões com a bot-list da Kyoto Code™",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renato425/kyoto-code.git"
+  },
+  "keywords": [
+    "bot-list",
+    "kyoto",
+    "code",
+    "kyoto-code",
+    "kyotocode",
+    "api",
+    "discord",
+    "discord.js"
+  ],
+  "devDepedencies": {
+    "discord.js": "^12.3.1"
+  },
+  "author": "renatin425",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renato425/kyoto-code/issues"
+  },
+  "homepage": "https://github.com/renato425/kyoto-code#readme",
+  "dependencies": {
+    "firebase": "^7.22.1"
+  }
+}
