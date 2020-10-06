@@ -32,3 +32,9 @@ Como: tag do dono, id do dono, tag do bot, id do bot, e votos
 const res = await API.botInfo()
 console.log(res)
 ```
+
+# Usando nossos dados
+Aqueles que usarem nosso dados sem a nossa permissão, terá alguns probleminhas como:
+* Banimento do servidor oficial
+* Perda de dados do banco
+* Banimento de todos os servidores em referência á Kyoto Code™
