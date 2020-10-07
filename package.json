@@ -1,6 +1,6 @@
 {
   "name": "kyoto-code",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "Faça conexões com a bot-list da Kyoto Code™",
   "main": "index.js",
   "scripts": {

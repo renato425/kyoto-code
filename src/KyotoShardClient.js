@@ -1,15 +1,5 @@
 const firebase = require("firebase")
 
-var firebaseConfig = {
-    apiKey: "AIzaSyAqSfQiJVSR93SS49wjhy7OD8RZG-pwPLU",
-    authDomain: "kyotocode.firebaseapp.com",
-    databaseURL: "https://kyotocode.firebaseio.com",
-    projectId: "kyotocode",
-    storageBucket: "kyotocode.appspot.com",
-    messagingSenderId: "423213735411",
-    appId: "1:423213735411:web:25a6761537c065da9f0686"
-  };
-firebase.initializeApp(firebaseConfig)
 
 var database = firebase.database()
 
@@ -66,6 +56,7 @@ class ShardingClient {
 				}
 			})
 		})
+	}
 		async post() {
 			let guild_count = 0
 			let user_count = 0
@@ -82,10 +73,11 @@ class ShardingClient {
 			let id = (await this.manager.broadcastEval("this.user.id"))[0]
 			let info = (await this.manager.broadcastEval("this.user"))[0]
 			database.ref(`Bots/${id}`).update({
-				guild: guild_count,
-				user: user_count
+				guild_count: guild_count,
+				user_count: user_count
 			})
 		}
+}
 		//v12 sharding get
 		async function getGuildCountV12(manager) {
 			return (await manager.fetchClientValues("guilds.cache.size")).reduce((prev, content) => prev + content, 0)
@@ -101,7 +93,5 @@ class ShardingClient {
 		async function getUserCountV11(manager) {
 			return (await manager.fetchClientValues("users.size")).reduce((prev, current) => prev + current, 0)
 		}
-		//fim
-	}
-}
+		//fim)
 module.exports = ShardingClient

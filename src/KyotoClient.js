@@ -43,6 +43,7 @@ class KyotoCode {
 				"ShardingManager detectada. Use o ShardingClient!"
 			)
 		} else this.sharding = false
+	}
 		
 		async post() {
 			if (this.sharding)
@@ -56,7 +57,7 @@ class KyotoCode {
 				//v12 code
 				if (this.v12) {
 					guild_count = this.client.guilds.cache.size
-					user_count = this.client.guilds.cache.size
+					user_count = this.client.users.cache.size
 				} else if (this.v11) {
 					//v11 code
 					guild_count = this.client.guilds.size
@@ -92,6 +93,7 @@ Bot ID: ${this.client.user.id}
 Votos: ${snap.val().votos}`)
 			})
 		}
+}
 		//Pegando shard na v12
 		async function getGuildCountV12(client) {
 			return (await client.shard.fetchClientValues("guilds.cache.size")).reduce((prev, current) => prev + current, 0)
@@ -107,7 +109,5 @@ Votos: ${snap.val().votos}`)
 		async function getUserCountV11(client) {
 			return (await client.shard.fetchClientValues("users.size")).reduce((prev, current) => prev + current, 0)
 		}
-	}
-}
 //fim
 module.exports = KyotoCode
